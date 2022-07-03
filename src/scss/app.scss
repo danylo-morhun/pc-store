@@ -1,0 +1,20 @@
+@import "./components/all";
+@import "./libs/normalize";
+
+* {
+  font-family: Montserrat;
+}
+
+body {
+  background: #47b5ff;
+}
+
+.wrapper {
+  background: #dff6ff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  max-height: 100%;
+  max-width: 1340px;
+  margin: 50px auto;
+  padding: 40px 60px;
+}
