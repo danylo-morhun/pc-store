@@ -1,7 +1,12 @@
-import "./scss/app.scss";
+import React from "react";
+
 import Header from "./components/Header";
 import Categories from "./components/Categories";
 import Card from "./components/Card";
+
+import "./scss/app.scss";
+
+import goods from "./assets/goods.json";
 
 function App() {
   return (
@@ -10,11 +15,9 @@ function App() {
       <Categories />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
       <div className="card-flex">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {goods.map((obj) => (
+          <Card {...obj} />
+        ))}
       </div>
     </div>
   );

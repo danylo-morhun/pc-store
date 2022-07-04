@@ -51,8 +51,13 @@
           margin-right: 7px;
         }
 
-        li:hover {
-          background: #ffffff;
+        // li:hover {
+        //   background: #dff6ff;
+        //   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+        // }
+
+        .active {
+          background: #dff6ff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
         }
       }
@@ -82,8 +87,8 @@
           margin-right: 7px;
         }
 
-        li:hover {
-          background: #ffffff;
+        .active {
+          background: #dff6ff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
         }
       }
