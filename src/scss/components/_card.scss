@@ -9,6 +9,12 @@
   }
 
   .item__block {
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
     img {
       margin-top: 40px;
     }
@@ -50,11 +56,6 @@
         li:not(:first-child) {
           margin-right: 7px;
         }
-
-        // li:hover {
-        //   background: #dff6ff;
-        //   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-        // }
 
         .active {
           background: #dff6ff;
@@ -116,6 +117,10 @@
         position: relative;
         display: flex;
         cursor: pointer;
+
+        &:active {
+          background: rgba(19, 99, 223, 0.1);
+        }
 
         img {
           position: absolute;

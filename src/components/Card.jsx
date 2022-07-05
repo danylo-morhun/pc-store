@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function Card({ imageUrl, title, price, itemPackage, model }) {
+export default function Card({
+  id,
+  imageUrl,
+  title,
+  price,
+  itemPackage,
+  model,
+}) {
   const [cartCount, setCartCount] = React.useState(0);
   const [activePackage, setActivePackage] = React.useState(0);
   const [activeModel, setActiveModel] = React.useState(0);
@@ -26,6 +33,7 @@ export default function Card({ imageUrl, title, price, itemPackage, model }) {
           <ul className="item__choose-first">
             {itemPackage.map((value, i) => (
               <li
+                key={value}
                 onClick={() => onChangePackage(i)}
                 className={activePackage === i ? "active" : ""}
               >
@@ -36,6 +44,7 @@ export default function Card({ imageUrl, title, price, itemPackage, model }) {
           <ul className="item__choose-second">
             {model.map((value, i) => (
               <li
+                key={value}
                 onClick={() => onChangeModel(i)}
                 className={activeModel === i ? "active" : ""}
               >

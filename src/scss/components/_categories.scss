@@ -83,12 +83,28 @@
       font-weight: 400;
       cursor: pointer;
       transition: all 0.15s linear;
+
+      &:first-child {
+        margin-top: 7px;
+      }
+      &:last-child {
+        margin-bottom: 7px;
+      }
+    }
+
+    .sort__active {
+      padding: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s linear;
+      background: rgba(19, 99, 223, 0.2);
+      color: #1363df;
     }
 
     li:hover {
       & {
         background: rgba(19, 99, 223, 0.2);
-        border-radius: 10px;
         color: #1363df;
       }
     }

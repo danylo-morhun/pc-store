@@ -2,9 +2,20 @@ import React from "react";
 
 export default function Categories() {
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [sortVisible, setSortVisible] = React.useState(false);
+  const [sortActive, setSortActive] = React.useState(0);
 
   const onChangeIndex = (i) => {
     setActiveIndex(i);
+  };
+
+  const onOpenSort = () => {
+    setSortVisible(!sortVisible);
+  };
+
+  const onChangeSort = (i) => {
+    setSortActive(i);
+    onOpenSort();
   };
 
   const categories = [
@@ -16,11 +27,14 @@ export default function Categories() {
     "Корпуси",
   ];
 
+  const sortList = ["популярністю", "ціною", "алфавітом"];
+
   return (
     <div className="categories">
       <ul className="categories__list">
         {categories.map((value, i) => (
           <li
+            key={i}
             className={activeIndex === i ? "active" : ""}
             onClick={() => onChangeIndex(i)}
           >
@@ -32,13 +46,23 @@ export default function Categories() {
       <div className="sort">
         <img width={10} height={6} src="img/sort-arrow.svg" alt="Expand" />
         <span className="title">Сортувати за:</span>
-        <span className="expand">популярністю</span>
+        <span className="expand" onClick={onOpenSort}>
+          {sortList[sortActive]}
+        </span>
       </div>
-      <ul className="sort-expanded">
-        <li>популярністю</li>
-        <li>ціною</li>
-        <li>алфавітом</li>
-      </ul>
+      {sortVisible && (
+        <ul className="sort-expanded">
+          {sortList.map((value, i) => (
+            <li
+              key={i}
+              className={sortActive === i ? "sort__active" : ""}
+              onClick={() => onChangeSort(i)}
+            >
+              {value}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

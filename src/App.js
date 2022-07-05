@@ -16,7 +16,7 @@ function App() {
       <h2 className="wrapper__title">Усі комплектуючі</h2>
       <div className="card-flex">
         {goods.map((obj) => (
-          <Card {...obj} />
+          <Card key={obj.id} {...obj} />
         ))}
       </div>
     </div>
