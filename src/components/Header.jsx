@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header>
-      <div className="header__left">
-        <img width={50} height={45} src="img/logo.svg" alt="Logo" />
-        <div className="header__left-text">
-          <h2 className="header__name">pc store</h2>
-          <p>комп'ютерні комплектуючі</p>
+      <Link to="/">
+        <div className="header__left">
+          <img width={50} height={45} src="img/logo.svg" alt="Logo" />
+          <div className="header__left-text">
+            <h2 className="header__name">pc store</h2>
+            <p>комп'ютерні комплектуючі</p>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className="header__right">
         <div className="header__right-price">2599 ₴</div>
