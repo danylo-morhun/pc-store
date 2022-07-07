@@ -9,6 +9,10 @@ export default function Header() {
           <img width={50} height={45} src="img/logo.svg" alt="Logo" />
           <div className="header__left-text">
             <h2 className="header__name">pc store</h2>
+            <div className="header__name-mobile">
+              PC <br />
+              store
+            </div>
             <p>комп'ютерні комплектуючі</p>
           </div>
         </div>

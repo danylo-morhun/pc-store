@@ -21,10 +21,12 @@ function Home() {
     <>
       <Categories />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
-      <div className="card-flex">
-        {isLoading
-          ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
-          : items.map((obj) => <Card key={obj.id} {...obj} />)}
+      <div className="card-flex-center">
+        <div className="card-flex">
+          {isLoading
+            ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
+            : items.map((obj) => <Card key={obj.id} {...obj} />)}
+        </div>
       </div>
     </>
   );

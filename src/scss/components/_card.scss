@@ -1,8 +1,16 @@
+.item__block-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 
   &:not(:nth-child(4n)) {
     margin: 0 53px 0 0;
