@@ -18,20 +18,22 @@ export default function Header() {
         </div>
       </Link>
 
-      <div className="header__right">
-        <div className="header__right-price">2599 ₴</div>
-        <img
-          width={1}
-          height={25}
-          src="img/cart-line.svg"
-          alt="Vertical Line"
-          className="header__right-line"
-        />
-        <div className="header__right-cart">
-          <img width={16} height={16} src="img/cart.svg" alt="Cart" />
-          <p>1</p>
+      <Link to="/cart">
+        <div className="header__right">
+          <div className="header__right-price">2599 ₴</div>
+          <img
+            width={1}
+            height={25}
+            src="img/cart-line.svg"
+            alt="Vertical Line"
+            className="header__right-line"
+          />
+          <div className="header__right-cart">
+            <img width={16} height={16} src="img/cart.svg" alt="Cart" />
+            <p>1</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </header>
   );
 }
