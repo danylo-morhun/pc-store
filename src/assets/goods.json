@@ -30,5 +30,37 @@
     "price": 12999,
     "itemPackage": ["OEM", "BOX"],
     "model": ["10900K", "11900K", "12900K"]
+  },
+  {
+    "id": 4,
+    "imageUrl": "img/goods/ryzen-3.png",
+    "title": "AMD Ryzen 3",
+    "price": 3699,
+    "itemPackage": ["OEM", "BOX"],
+    "model": ["3100", "3200G", "4100"]
+  },
+  {
+    "id": 5,
+    "imageUrl": "img/goods/ryzen-5.png",
+    "title": "AMD Ryzen 5",
+    "price": 4599,
+    "itemPackage": ["OEM", "BOX"],
+    "model": ["3600", "4500", "5600"]
+  },
+  {
+    "id": 6,
+    "imageUrl": "img/goods/ryzen-7.png",
+    "title": "AMD Ryzen 7",
+    "price": 8999,
+    "itemPackage": ["OEM", "BOX"],
+    "model": ["3700", "4700", "5700"]
+  },
+  {
+    "id": 7,
+    "imageUrl": "img/goods/ryzen-9.png",
+    "title": "AMD Ryzen 9",
+    "price": 14799,
+    "itemPackage": ["OEM", "BOX"],
+    "model": ["3900", "5900", "5950"]
   }
 ]
