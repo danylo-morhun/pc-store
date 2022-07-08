@@ -29,7 +29,7 @@ export default function Header() {
             className="header__right-line"
           />
           <div className="header__right-cart">
-            <img width={16} height={16} src="img/cart.svg" alt="Cart" />
+            <img width={16} height={16} src="img/cart1.svg" alt="Cart" />
             <p>1</p>
           </div>
         </div>
