@@ -7,20 +7,29 @@ import Skeleton from "../components/Card/Skeleton.jsx";
 function Home() {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [categoryId, setCategoryId] = React.useState(0);
+  const [sortType, setSortType] = React.useState(0);
+
+  const category = categoryId > 0 ? `category=${categoryId}` : "";
 
   React.useEffect(() => {
-    fetch("https://62c5cf49a361f725128f2c86.mockapi.io/items")
+    setIsLoading(true);
+    fetch(`https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}`)
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [categoryId]);
 
   return (
     <>
-      <Categories />
+      <Categories
+        categoryId={categoryId}
+        sortType={sortType}
+        onClickCategory={(i) => setCategoryId(i)}
+      />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
       <div className="card-flex-center">
         <div className="card-flex">

@@ -30,6 +30,8 @@
     h3 {
       margin-top: 12px;
       color: #06283d;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .item__choose-block {

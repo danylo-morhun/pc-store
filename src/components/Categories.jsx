@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Categories() {
+export default function Categories({
+  categoryId,
+  sortType,
+  onClickCategory,
+  onClickSort,
+}) {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [sortVisible, setSortVisible] = React.useState(false);
   const [sortActive, setSortActive] = React.useState(0);
@@ -32,13 +37,13 @@ export default function Categories() {
   return (
     <div className="categories">
       <ul className="categories__list">
-        {categories.map((value, i) => (
+        {categories.map((categoryName, i) => (
           <li
             key={i}
-            className={activeIndex === i ? "active" : ""}
-            onClick={() => onChangeIndex(i)}
+            className={categoryId === i ? "active" : ""}
+            onClick={() => onClickCategory(i)}
           >
-            {value}
+            {categoryName}
           </li>
         ))}
       </ul>

@@ -5,7 +5,8 @@
     "title": "Intel Core i3",
     "price": 2599,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["10100F", "10105F", "12100F"]
+    "model": ["10100F", "10105F", "12100F"],
+    "category": 1
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "title": "Intel Core i5",
     "price": 4399,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["10400F", "11400F", "12400F"]
+    "model": ["10400F", "11400F", "12400F"],
+    "category": 1
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "title": "Intel Core i7",
     "price": 9599,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["10700F", "11700K", "12700K"]
+    "model": ["10700F", "11700K", "12700K"],
+    "category": 1
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "title": "Intel Core i9",
     "price": 12999,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["10900K", "11900K", "12900K"]
+    "model": ["10900K", "11900K", "12900K"],
+    "category": 1
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "title": "AMD Ryzen 3",
     "price": 3699,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["3100", "3200G", "4100"]
+    "model": ["3100", "3200G", "4100"],
+    "category": 1
   },
   {
     "id": 5,
@@ -45,7 +50,8 @@
     "title": "AMD Ryzen 5",
     "price": 4599,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["3600", "4500", "5600"]
+    "model": ["3600", "4500", "5600"],
+    "category": 1
   },
   {
     "id": 6,
@@ -53,7 +59,8 @@
     "title": "AMD Ryzen 7",
     "price": 8999,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["3700", "4700", "5700"]
+    "model": ["3700", "4700", "5700"],
+    "category": 1
   },
   {
     "id": 7,
@@ -61,6 +68,115 @@
     "title": "AMD Ryzen 9",
     "price": 14799,
     "itemPackage": ["OEM", "BOX"],
-    "model": ["3900", "5900", "5950"]
+    "model": ["3900", "5900", "5950"],
+    "category": 1
+  },
+  {
+    "id": 8,
+    "imageUrl": "img/goods/nvidia10.png",
+    "title": "Nvidia GeForce 10 Series",
+    "price": 5499,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["1060", "1070", "1080"],
+    "category": 2
+  },
+  {
+    "id": 9,
+    "imageUrl": "img/goods/nvidia20.png",
+    "title": "Nvidia GeForce 20 Series",
+    "price": 12799,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["2060", "2070", "2080"],
+    "category": 2
+  },
+  {
+    "id": 10,
+    "imageUrl": "img/goods/nvidia30.png",
+    "title": "Nvidia GeForce 30 Series",
+    "price": 18399,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["3060", "3070", "3080"],
+    "category": 2
+  },
+  {
+    "id": 11,
+    "imageUrl": "img/goods/amd500.png",
+    "title": "AMD Radeon RX 500 Series",
+    "price": 5499,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["560", "570", "580"],
+    "category": 2
+  },
+  {
+    "id": 12,
+    "imageUrl": "img/goods/amd5000.png",
+    "title": "AMD Radeon RX 5000 Series",
+    "price": 12799,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["5500", "5600", "5700"],
+    "category": 2
+  },
+  {
+    "id": 13,
+    "imageUrl": "img/goods/amd6000.png",
+    "title": "AMD Radeon RX 6000 Series",
+    "price": 18399,
+    "itemPackage": ["Founders", "Vendor"],
+    "model": ["6400", "6600", "6700"],
+    "category": 2
+  },
+  {
+    "id": 14,
+    "imageUrl": "img/goods/gskill.png",
+    "title": "G-Skill Trident Z",
+    "price": 1599,
+    "itemPackage": ["White", "RGB"],
+    "model": ["8 GB", "16 GB", "32 GB"],
+    "category": 3
+  },
+  {
+    "id": 15,
+    "imageUrl": "img/goods/goodram.png",
+    "title": "Goodram IRDM",
+    "price": 1499,
+    "itemPackage": ["Red", "Gold"],
+    "model": ["8 GB", "16 GB", "32 GB"],
+    "category": 3
+  },
+  {
+    "id": 16,
+    "imageUrl": "img/goods/deepcool.png",
+    "title": "DeepCool Gammaxx",
+    "price": 599,
+    "itemPackage": ["Blue", "RGB"],
+    "model": ["300", "400", "GTE"],
+    "category": 4
+  },
+  {
+    "id": 17,
+    "imageUrl": "img/goods/aardwolf.png",
+    "title": "AARDWOLF Performa",
+    "price": 699,
+    "itemPackage": ["White", "RGB"],
+    "model": ["8X", "9X", "10X"],
+    "category": 4
+  },
+  {
+    "id": 18,
+    "imageUrl": "img/goods/nzxt.png",
+    "title": "NZXT",
+    "price": 3499,
+    "itemPackage": ["White", "Black"],
+    "model": ["Full Tower", "Mid Tower", "Micro-ATX"],
+    "category": 5
+  },
+  {
+    "id": 19,
+    "imageUrl": "img/goods/aerocool.png",
+    "title": "AeroCool Aero One",
+    "price": 1999,
+    "itemPackage": ["White", "Black"],
+    "model": ["Full Tower", "Mid Tower", "Micro-ATX"],
+    "category": 5
   }
 ]
