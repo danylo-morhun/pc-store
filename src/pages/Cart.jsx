@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Cart(id, imageUrl, title, price, itemPackage, model) {
   return (
@@ -53,10 +54,12 @@ export default function Cart(id, imageUrl, title, price, itemPackage, model) {
         </span>
       </div>
       <div className="cart__bottom-buttons">
-        <button className="cart__button-back">
-          <img width={6} height={12} src="img/back.svg" alt="Back" />
-          <span>Повернутися назад</span>
-        </button>
+        <Link to="/">
+          <button className="cart__button-back">
+            <img width={6} height={12} src="img/back.svg" alt="Back" />
+            <span>Повернутися назад</span>
+          </button>
+        </Link>
         <button className="cart__button-pay">
           <span>Сплатити онлайн</span>
         </button>
