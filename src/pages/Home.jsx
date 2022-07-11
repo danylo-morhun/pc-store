@@ -8,20 +8,25 @@ function Home() {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
-  const [sortType, setSortType] = React.useState(0);
+  const [sortType, setSortType] = React.useState({
+    name: "популярністю",
+    sortProperty: "rating",
+  });
 
   const category = categoryId > 0 ? `category=${categoryId}` : "";
 
   React.useEffect(() => {
     setIsLoading(true);
-    fetch(`https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}`)
+    fetch(
+      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}`
+    )
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId]);
+  }, [categoryId, sortType]);
 
   return (
     <>
@@ -29,6 +34,7 @@ function Home() {
         categoryId={categoryId}
         sortType={sortType}
         onClickCategory={(i) => setCategoryId(i)}
+        onClickSort={(i) => setSortType(i)}
       />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
       <div className="card-flex-center">

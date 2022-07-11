@@ -6,12 +6,10 @@ export default function Categories({
   onClickCategory,
   onClickSort,
 }) {
-  const [activeIndex, setActiveIndex] = React.useState(0);
   const [sortVisible, setSortVisible] = React.useState(false);
-  const [sortActive, setSortActive] = React.useState(0);
 
   const onChangeIndex = (i) => {
-    setActiveIndex(i);
+    onClickSort(i);
   };
 
   const onOpenSort = () => {
@@ -19,7 +17,7 @@ export default function Categories({
   };
 
   const onChangeSort = (i) => {
-    setSortActive(i);
+    onChangeIndex(i);
     onOpenSort();
   };
 
@@ -32,7 +30,11 @@ export default function Categories({
     "Корпуси",
   ];
 
-  const sortList = ["популярністю", "ціною", "алфавітом"];
+  const sortList = [
+    { name: "популярністю", sortProperty: "rating" },
+    { name: "ціною", sortProperty: "price" },
+    { name: "алфавітом", sortProperty: "title" },
+  ];
 
   return (
     <div className="categories">
@@ -52,18 +54,20 @@ export default function Categories({
         <img width={10} height={6} src="img/sort-arrow.svg" alt="Expand" />
         <span className="title">Сортувати за:</span>
         <span className="expand" onClick={onOpenSort}>
-          {sortList[sortActive]}
+          {sortType.name}
         </span>
       </div>
       {sortVisible && (
         <ul className="sort-expanded">
-          {sortList.map((value, i) => (
+          {sortList.map((obj, i) => (
             <li
               key={i}
-              className={sortActive === i ? "sort__active" : ""}
-              onClick={() => onChangeSort(i)}
+              className={
+                sortType.sortProperty === obj.sortProperty ? "sort__active" : ""
+              }
+              onClick={() => onChangeSort(obj)}
             >
-              {value}
+              {obj.name}
             </li>
           ))}
         </ul>
