@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+import Search from "./Search";
+
+export default function Header({ searchValue, setSearchValue }) {
   return (
     <header>
       <Link to="/">
@@ -17,6 +19,8 @@ export default function Header() {
           </div>
         </div>
       </Link>
+
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <Link to="/cart">
         <div className="header__right">
