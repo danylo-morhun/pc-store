@@ -16,9 +16,11 @@ function Home({ searchValue }) {
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const order = sortType.sortProperty === "rating" ? "desc" : "asc";
+    const search = searchValue ? `&search=${searchValue}` : "";
+
     setIsLoading(true);
     fetch(
-      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=${order}`
+      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}${search}&sortBy=${sortType.sortProperty}&order=${order}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -26,16 +28,9 @@ function Home({ searchValue }) {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, searchValue]);
 
-  const goods = items
-    .filter((obj) => {
-      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-        return true;
-      }
-      return false;
-    })
-    .map((obj) => <Card key={obj.id} {...obj} />);
+  const goods = items.map((obj) => <Card key={obj.id} {...obj} />);
   const skeletons = [...new Array(8)].map((_, index) => (
     <Skeleton key={index} />
   ));
