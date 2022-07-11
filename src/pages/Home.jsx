@@ -14,11 +14,12 @@ function Home() {
   });
 
   const category = categoryId > 0 ? `category=${categoryId}` : "";
+  const order = sortType.sortProperty === "rating" ? "desc" : "asc";
 
   React.useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=desc`
+      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=${order}`
     )
       .then((res) => res.json())
       .then((json) => {
