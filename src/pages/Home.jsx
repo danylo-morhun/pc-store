@@ -3,8 +3,11 @@ import React from "react";
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import Skeleton from "../components/Card/Skeleton";
+import { SearchContext } from "../App";
 
-function Home({ searchValue }) {
+function Home() {
+  const { searchValue } = React.useContext(SearchContext);
+
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
