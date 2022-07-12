@@ -20,7 +20,7 @@ function Home({ searchValue }) {
 
     setIsLoading(true);
     fetch(
-      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}${search}&sortBy=${sortType.sortProperty}&order=${order}`
+      `https://62c5cf49a361f725128f2c86.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=${order}${search}`
     )
       .then((res) => res.json())
       .then((json) => {
