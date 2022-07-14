@@ -3,7 +3,7 @@ import React from "react";
 export default function Categories({
   categoryId,
   sortType,
-  onClickCategory,
+  onChangeCategory,
   onClickSort,
 }) {
   const [sortVisible, setSortVisible] = React.useState(false);
@@ -43,7 +43,7 @@ export default function Categories({
           <li
             key={i}
             className={categoryId === i ? "active" : ""}
-            onClick={() => onClickCategory(i)}
+            onClick={() => onChangeCategory(i)}
           >
             {categoryName}
           </li>

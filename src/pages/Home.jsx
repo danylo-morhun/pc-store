@@ -1,20 +1,30 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import Skeleton from "../components/Card/Skeleton";
 import { SearchContext } from "../App";
+import { setCategoryId } from "../redux/filter/slice";
 
 function Home() {
+  const dispatch = useDispatch();
+  const categoryId = useSelector((state) => state.filter.categoryId);
+
   const { searchValue } = React.useContext(SearchContext);
 
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [categoryId, setCategoryId] = React.useState(0);
+  // const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
     name: "популярністю",
     sortProperty: "rating",
   });
+
+  const onChangeCategory = (id) => {
+    dispatch(setCategoryId(id));
+    console.log(categoryId);
+  };
 
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -43,7 +53,7 @@ function Home() {
       <Categories
         categoryId={categoryId}
         sortType={sortType}
-        onClickCategory={(i) => setCategoryId(i)}
+        onChangeCategory={onChangeCategory}
         onClickSort={(i) => setSortType(i)}
       />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
