@@ -3,7 +3,7 @@
 this is a pet project for learning and improving already existing skills of creating web-applications.
 the subject of this web-application is online store with PC parts.
 
-developed by **[Danylo Morhun](https://github.com/underhazee).**
+developed by **[Danylo Morhun](https://github.com/danylo-morhun).**
 
 ## 🛠 used technologies (bold means already used):
 
