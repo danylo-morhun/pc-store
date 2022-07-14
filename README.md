@@ -11,8 +11,8 @@ developed by **[Danylo Morhun](https://github.com/underhazee).**
 - **react router**
 - **scss + css.modules**
 - **skeleton content loader**
+- **redux toolkit**
 - typescript
-- redux toolkit
 - axios
 - lodash.debounce
 - code splitting, react loadable, useWhyDidYouUpdate
