@@ -10,16 +10,12 @@ import { setCategoryId } from "../redux/filter/slice";
 function Home() {
   const dispatch = useDispatch();
   const categoryId = useSelector((state) => state.filter.categoryId);
+  const sortType = useSelector((state) => state.filter.sort);
 
   const { searchValue } = React.useContext(SearchContext);
 
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  // const [categoryId, setCategoryId] = React.useState(0);
-  const [sortType, setSortType] = React.useState({
-    name: "популярністю",
-    sortProperty: "rating",
-  });
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -50,12 +46,7 @@ function Home() {
 
   return (
     <>
-      <Categories
-        categoryId={categoryId}
-        sortType={sortType}
-        onChangeCategory={onChangeCategory}
-        onClickSort={(i) => setSortType(i)}
-      />
+      <Categories categoryId={categoryId} onChangeCategory={onChangeCategory} />
       <h2 className="wrapper__title">Усі комплектуючі</h2>
       <div className="card-flex-center">
         <div className="card-flex">{isLoading ? skeletons : goods}</div>

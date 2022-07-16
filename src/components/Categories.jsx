@@ -1,23 +1,19 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setSort } from "../redux/filter/slice";
 
-export default function Categories({
-  categoryId,
-  sortType,
-  onChangeCategory,
-  onClickSort,
-}) {
+export default function Categories({ categoryId, onChangeCategory }) {
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filter.sort);
+
   const [sortVisible, setSortVisible] = React.useState(false);
-
-  const onChangeIndex = (i) => {
-    onClickSort(i);
-  };
 
   const onOpenSort = () => {
     setSortVisible(!sortVisible);
   };
 
   const onChangeSort = (i) => {
-    onChangeIndex(i);
+    dispatch(setSort(i));
     onOpenSort();
   };
 
@@ -54,7 +50,7 @@ export default function Categories({
         <img width={10} height={6} src="img/sort-arrow.svg" alt="Expand" />
         <span className="title">Сортувати за:</span>
         <span className="expand" onClick={onOpenSort}>
-          {sortType.name}
+          {sort.name}
         </span>
       </div>
       {sortVisible && (
@@ -63,7 +59,7 @@ export default function Categories({
             <li
               key={i}
               className={
-                sortType.sortProperty === obj.sortProperty ? "sort__active" : ""
+                sort.sortProperty === obj.sortProperty ? "sort__active" : ""
               }
               onClick={() => onChangeSort(obj)}
             >
