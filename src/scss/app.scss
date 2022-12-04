@@ -1,9 +1,10 @@
 @import "./components/all";
 @import "./libs/normalize";
 @import "./components/search";
+@import "./fonts";
 
 * {
-  font-family: Montserrat;
+  font-family: "Manrope", sans-serif;
 }
 
 body {
